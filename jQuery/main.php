@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <head>
@@ -83,3 +84,14 @@
 
 </body>
 </html>
+=======
+<script>
+
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.push("Kiwi");
+
+    console.log(fruits.toString());
+
+
+</script>
+>>>>>>> 5acebfc6bd5e70e242c338c727d12a1257a04cb3
