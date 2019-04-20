@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+        class App extends React.Component{
+            state = {
+                name : 'Khokon',
+                age : 27
+            }
+
+            handleClick(e) {
+                console.log(e.target);
+            }
+
+            handleMouseOver(e){
+                console.log(e);
+            }
+
+            handleOnCopy(e){
+                console.log('Try being orginal to be once!');
+            }
+
+            render (){
+                return(
+                    <div className="app-content">
+                        <h1>Hi, Guys</h1>
+                        <p>My name is { this.state.name } and I am { this.state.age } </p>
+                        <button onClick={ this.handleClick }>Click Me</button>
+                        <button onMouseOver={ this.handleClick }>Hover Me</button>
+                        <p onCopy={ this.handleOnCopy }>What we think, We Become</p>
+
+                    </div>   
+                )
+            }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('app'));
+
+    </script>
+
+</body>
+</html>
