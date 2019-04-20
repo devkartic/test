@@ -17,7 +17,7 @@
 
 <div class="container">
     <div class="col-md-12">
-        <?php include 'add_multiple_row.php';?>
+        <?php include 'main.php';?>
     </div>
 
 </div>
