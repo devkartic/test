@@ -20,7 +20,7 @@ class b extends a{
     static protected $test="class b";
 }
 
-$obj = new b();
+$obj = new b(); // Create Instance and Run Constructor
 $obj->static_test();
 
 /*
@@ -58,8 +58,8 @@ class Bar extends Foo {
     }
 }
 
-$a = new Foo;
-$a = new Bar;
+$a = new Foo; // Create Instance and Run Constructor
+$a = new Bar; // Create Instance and Run Constructor
 
 echo 'Parent: parent_only=', Foo::$parent_only, ', both_distinct=', Foo::$both_distinct, "<br/>";
 echo 'Child:  parent_only=', Bar::$parent_only, ', both_distinct=', Bar::$both_distinct, ', child_only=', Bar::$child_only, "<br/>";
@@ -75,7 +75,7 @@ On PHP 5.2.x or previous you might run into problems initializing static variabl
  due to the lack of late static binding:
 */
 
-class Foo {
+class Foo3 {
     protected static $a;
 
     public static function init($value) {
@@ -87,7 +87,7 @@ class Foo {
     }
 }
 
-class Bar extends Foo {
+class Bar3 extends Foo {
     protected static $a; // redefine $a for own use
 
     // inherit the init() method
@@ -96,12 +96,12 @@ class Bar extends Foo {
     }
 }
 
-Bar::init('Developer');
-echo 'Foo::$a = '.Foo::getA().'<br/>Bar::$a = '.Bar::getA();
+Bar3::init('Developer');
+echo 'Foo3::$a = '.Foo3::getA().'<br/>Bar3::$a = '.Bar3::getA();
 
 /*
  If the init() method looks the same for (almost) all subclasses there should be no need to implement init()
-in every subclass and by that producing redundant code. 
+in every subclass and by that producing redundant code.
 */
 
 
